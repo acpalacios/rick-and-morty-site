@@ -4,7 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import Card from "./card";
 
 const List = () => {
-  const GET_PLANETS = gql`
+  const GET_CHARACTERS = gql`
     query GetCharacters {
       characters(page: 1) {
         results {
@@ -24,7 +24,7 @@ const List = () => {
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_PLANETS);
+  const { loading, error, data } = useQuery(GET_CHARACTERS);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
